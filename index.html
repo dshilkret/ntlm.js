@@ -1,4 +1,16 @@
 <script src="https://ntlm-js.vercel.app/ntlm.js">
 </script>
-
-<button onclick="Ntlm.authenticateVercel()">NTLM Test</button>
+<script>
+function executeNTLM(){
+    Ntlm.setCredentials('vm-wzb27rov-sp.spwzb27rov2c3sm', 'dtech', 'DTPass.01');
+    var url = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com/_api/web/lists';  
+        if (Ntlm.authenticate(url)) {
+            var request = new XMLHttpRequest();
+            request.open('GET', url, false);
+            request.send(null);
+            console.log(request.responseText);
+            // => My super secret message stored on server.
+        }
+}
+</script>
+<button onclick="Ntlm.executeNTLM()">NTLM Test</button>
