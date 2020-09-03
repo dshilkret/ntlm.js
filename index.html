@@ -2,8 +2,8 @@
 </script>
 <script>
 function executeNTLM(){
-    Ntlm.setCredentials('vm-wzb27rov-sp.spwzb27rov2c3sm', 'dtech', 'DTPass.01');
-    var url = 'https://spwzb27rov2c3sm.eastus2.cloudapp.azure.com/_api/web/lists';  
+    Ntlm.setCredentials('spwzb27rov2c3sm', 'dtech', 'DTPass.01');
+    var url = 'https://docintsp2016.discovertechnologies.com/_api/web/lists';  
         if (Ntlm.authenticate(url)) {
             var request = new XMLHttpRequest();
             request.open('GET', url, false);
